@@ -50,6 +50,7 @@
     <Compile Include="Entities\Dog.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DogRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />

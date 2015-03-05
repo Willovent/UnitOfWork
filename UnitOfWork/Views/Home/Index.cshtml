@@ -10,7 +10,7 @@
         @foreach (var user in Model.Users)
         {
             <li>
-                <div class="user-avatar" style="background-image: url(@user.Avatar)"></div>
+                <div class="avatar" style="background-image: url(@user.Avatar)"></div>
                 <div class="user-info">
                     <span class="user-name">@user.FirstName @user.Name</span>
                     <br />
@@ -21,9 +21,9 @@
                     {
 
                         <li class="dog">
-                            <div class="user-avatar" style="background-image: url(@dog.Avatar)"></div>
+                            <div class="avatar" style="background-image: url(@dog.Avatar)"></div>
                             <div class="dog-info">
-                                Ce chien s'appelle @dog.Name et à @dog.Age ans
+                                Ce chien s'appelle @dog.Name et a @dog.Age ans
                             </div>
                         </li>
                     }

@@ -16,14 +16,22 @@
     white-space: normal;
 }
 
-.user-avatar {
+.avatar {
     width: 80px;
     height: 80px;
     overflow: hidden;
+    -ms-background-size: cover;
     background-size: cover;
     background-position: center;
     float: left;
+    -webkit-box-shadow: 0 0 9px black;
+    -ms-box-shadow: 0 0 9px black;
+    box-shadow: 0 0 9px black;
+    -ms-border-radius: 12px;
+    border-radius: 12px;
+    border: 1px solid gray;
 }
+
 
 
 ul.dogs {
@@ -39,6 +47,8 @@ ul#users > li {
     box-shadow: 0 0 10px;
     margin: 10px;
     padding: 10px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
 }
 
 li.dog {

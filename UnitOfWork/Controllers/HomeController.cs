@@ -10,10 +10,9 @@ namespace UnitOfWorkNamespace.Controllers
 {
     public class HomeController : Controller
     {
-        //La classe à le même nom que le namespace de l'application
+        
         private readonly UnitOfWork _unitOfWork = new UnitOfWork(new Context());
-
-
+        
         public ActionResult Index()
         {
             var homeViewModel = new HomeViewModel {Users = _unitOfWork.UserRepository.LastUsers()};

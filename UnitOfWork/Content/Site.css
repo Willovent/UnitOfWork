@@ -15,9 +15,24 @@
 .dl-horizontal dt {
     white-space: normal;
 }
-ul#dogs {
-    display: none;
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    float: left;
 }
+
+
+ul.dogs {
+    display: none;
+    clear: both; 
+    margin: 20px;
+    float: left;
+}
+
 ul#users > li {
     -webkit-box-shadow: 0 0 10px;
     -ms-box-shadow: 0 0 10px;
@@ -26,8 +41,33 @@ ul#users > li {
     padding: 10px;
 }
 
-ul#users, ul#dogs {
+li.dog {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.dog-info {
+    padding: 20px;
+    float: left;
+}
+
+ul#users > li:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+
+ul#users, ul.dogs {
     list-style: none;
+    padding: 0;
+}
+
+.user-info {
+    float: left;
+    padding: 20px;
 }
 
 .glyphicon-user {
@@ -35,6 +75,9 @@ ul#users, ul#dogs {
     color: gray;
 }
 
+header {
+    text-align: center;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

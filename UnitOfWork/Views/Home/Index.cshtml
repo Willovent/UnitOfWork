@@ -1,4 +1,5 @@
-﻿@using UnitOfWorkNamespace.Models
+﻿@using Model.Utils
+@using UnitOfWorkNamespace.Models
 @model HomeViewModel
 @{
     ViewBag.Title = "Home Page";
@@ -9,28 +10,29 @@
         @foreach (var user in Model.Users)
         {
             <li>
-                <div>
-                    <span class="glyphicon glyphicon-user"></span>
-                    <span id="user-name">@user.Name @user.FirstName</span>
+                <div class="user-avatar" style="background-image: url(@user.Avatar)"></div>
+                <div class="user-info">
+                    <span class="user-name">@user.FirstName @user.Name</span>
                     <br />
-                    <span id="user-age">Agé de @user.Age ans, il possède @user.Dogs.Count chiens</span>
-                    <ul id="dogs">
-                        @{ var nbDog = 0;}
-                        @foreach (var dog in user.Dogs)
-                        {
-                            
-                            {
-                                nbDog++;
-                            }
-                        <li id="dogs">
-                                Son chien numéro @nbDog s'appel @dog.Name et à @dog.Age ans <br />
-                        </li>
-                        }
-                    </ul>
+                    <span id="user-age">Agé@(user.Sex == Sex.Female ? "e" : "") de @user.Age ans, @(user.Sex == Sex.Female ? "elle" : "il") possède @user.Dogs.Count chien@(user.Dogs.Count > 1 ? "s" : "")</span>
                 </div>
+                <ul class="dogs">
+                    @foreach (var dog in user.Dogs)
+                    {
+
+                        <li class="dog">
+                            <div class="user-avatar" style="background-image: url(@dog.Avatar)"></div>
+                            <div class="dog-info">
+                                Ce chien s'appelle @dog.Name et à @dog.Age ans
+                            </div>
+                        </li>
+                    }
+                </ul>
+
             </li>
         }
     </ul>
+
 </div>
 
 @section scripts{

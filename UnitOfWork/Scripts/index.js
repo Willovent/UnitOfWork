@@ -1,5 +1,5 @@
 ﻿$(function() {
     $('ul#users>li').click(function() {
-        $(this).find('ul#dogs').toggle();
+        $(this).find('ul.dogs').slideToggle();
     });
 })

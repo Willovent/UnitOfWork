@@ -20,11 +20,5 @@ namespace UnitOfWorkNamespace.Controllers
             return View(homeViewModel);
         }
 
-        public ActionResult Seed()
-        {
-
-            
-            return RedirectToAction("Index");
-        }
     }
 }

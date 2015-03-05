@@ -12,26 +12,26 @@ namespace Model.Repositories
     {
 
         private readonly Context _context;
-
-        public List<User> LastUsers()
-        {
-            return _context.Users.OrderByDescending(x =>x.UserId).Take(10).Include(x => x.Dogs).ToList();
-        } 
+        
         public UserRepository(Context context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Renvoie les 10 derniers utilisateurs enregistrés
+        /// </summary>
+        /// <returns></returns>
+        public List<User> LastUsers()
+        {
+            return _context.Users.OrderByDescending(x => x.UserId).Take(10).Include(x => x.Dogs).ToList();
+        } 
+
         public User Add(User entity)
         {
             return _context.Users.Add(entity);
         }
-
-        public async Task Truncate()
-        {
-            await _context.Database.ExecuteSqlCommandAsync("TRUNCATE TABLE Users");
-        }
-
+        
         public void Edit(User entity)
         {
             _context.Users.Attach(entity);

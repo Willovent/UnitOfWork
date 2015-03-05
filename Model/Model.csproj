@@ -55,7 +55,7 @@
     <Compile Include="Repositories\DogRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
-    <Compile Include="Utils\Class1.cs" />
+    <Compile Include="Utils\Enums.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

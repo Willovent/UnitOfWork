@@ -27,6 +27,11 @@ namespace Model.Repositories
             return _context.Users.Add(entity);
         }
 
+        public async void Truncate()
+        {
+            await _context.Database.ExecuteSqlCommandAsync("TRUNCATE TABLE Users");
+        }
+
         public void Edit(User entity)
         {
             _context.Users.Attach(entity);

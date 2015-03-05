@@ -17,6 +17,7 @@ namespace Model.Entities
         public string FirstName { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
+        public string Avatar { get; set; }
 
         //virtual pour le lazyloading 
         public virtual List<Dog> Dogs { get; set; }

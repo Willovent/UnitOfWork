@@ -11,7 +11,7 @@ namespace UnitOfWorkNamespace.Controllers
     public class HomeController : Controller
     {
         
-        private readonly UnitOfWork _unitOfWork = new UnitOfWork(new Context());
+        private readonly UnitOfWork _unitOfWork = new UnitOfWork();
         
         public ActionResult Index()
         {

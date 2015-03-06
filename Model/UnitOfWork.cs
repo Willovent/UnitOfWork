@@ -6,16 +6,11 @@ namespace Model
     public class UnitOfWork : IDisposable
     {
         private readonly Context _context;
-        public UnitOfWork(Context context)
-        {
-            _context = context;
-        }
-
         public UnitOfWork()
         {
-            // TODO: Complete member initialization
+            _context =new Context();
         }
-
+        
         private UserRepository _userRepository;
         public UserRepository UserRepository
         {

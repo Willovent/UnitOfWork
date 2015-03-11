@@ -6,6 +6,7 @@ namespace Model
     public class UnitOfWork : IDisposable
     {
         private readonly Context _context;
+
         public UnitOfWork()
         {
             _context =new Context();
@@ -37,14 +38,14 @@ namespace Model
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this._disposed)
+            if (!_disposed)
             {
                 if (disposing)
                 {
                     _context.Dispose();
                 }
             }
-            this._disposed = true;
+            _disposed = true;
         }
 
         public void Dispose()

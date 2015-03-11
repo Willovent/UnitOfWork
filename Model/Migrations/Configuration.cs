@@ -1,15 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using Model.Entities;
 using Model.Utils;
 
 namespace Model.Migrations
 {
-    using Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<Model.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context>
     {
         public Configuration()
         {
@@ -17,7 +14,7 @@ namespace Model.Migrations
             ContextKey = "Model.Context";
         }
 
-        protected override void Seed(Model.Context context)
+        protected override void Seed(Context context)
         {
             context.Users.AddOrUpdate(new User
             {
@@ -31,28 +28,28 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Barak",
                        Age = 4,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/barak.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/barak.jpg"
                    }, 
                    new Dog{
                        Name = "Fuzy",
                        Age = 5,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/fuzy.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/fuzy.jpg"
                    }, 
                    new Dog{                      
                        Name = "Mussy",
                        Age = 7,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/mussy.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/mussy.jpg"
                    }, 
                    new Dog{
                        Name = "Puppy",
                        Age = 2,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/puppy.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/puppy.jpg"
                    }, 
                    new Dog{
                        Name = "Shy",
                        Age = 2,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/shy.jpg",
-                   },
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Paris%20Hilton/shy.jpg"
+                   }
                 }
             });
             #region 101 dalmatiens
@@ -66,7 +63,7 @@ namespace Model.Migrations
                 Age = 45,
                 Sex = Sex.Female,
                 Avatar = "http://ovent.net/UnitOfWOrkFiles/Cruella/cruella.jpg",
-                Dogs = new List<Dog>(),
+                Dogs = new List<Dog>()
             };
 
             for (var i = 0; i < 101; i++)
@@ -75,7 +72,7 @@ namespace Model.Migrations
                 {
                     Name = "Dalamatien " + i,
                     Age = rand.Next(1,5),
-                    Avatar = string.Format("http://ovent.net/UnitOfWOrkFiles/Cruella/{0}.jpg",rand.Next(1,7)),
+                    Avatar = string.Format("http://ovent.net/UnitOfWOrkFiles/Cruella/{0}.jpg",rand.Next(1,7))
                 };
                 user.Dogs.Add(dog);
             }
@@ -95,7 +92,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Nymeria",
                        Age = 3,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Arya/Nymeria.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Arya/Nymeria.jpg"
                    }
                 }
             });
@@ -112,7 +109,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Scooby Doo",
                        Age = 19,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Sammy/scooby.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Sammy/scooby.jpg"
                    }
                 }
             });
@@ -129,7 +126,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Oddy",
                        Age = 3,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Garfield/oddy.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Garfield/oddy.jpg"
                    }
                 }
             });
@@ -146,7 +143,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Summer",
                        Age = 3,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Bran/Summer.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Bran/Summer.jpg"
                    }
                 }
             });
@@ -163,7 +160,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Ghost",
                        Age = 3,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Jon/ghost.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Jon/ghost.jpg"
                    }
                 }
             });
@@ -180,7 +177,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = " Azrael",
                        Age = 27,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Gargamel/azrael.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Gargamel/azrael.jpg"
                    }
                 }
             });
@@ -197,7 +194,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Grey Wind",
                        Age = 3,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Robb/grey-wind.png",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Robb/grey-wind.png"
                    }
                 }
             });
@@ -214,7 +211,7 @@ namespace Model.Migrations
                    new Dog{
                        Name = "Lady",
                        Age = 3,
-                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Sansa/lady.jpg",
+                       Avatar = "http://ovent.net/UnitOfWOrkFiles/Sansa/lady.jpg"
                    }
                 }
             });

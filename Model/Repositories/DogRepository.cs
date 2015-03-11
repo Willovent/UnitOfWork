@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using Model.Entities;
 
 namespace Model.Repositories
@@ -12,10 +7,11 @@ namespace Model.Repositories
     {
         private readonly Context _context;
 
-        public DogRepository(Context context)
+        internal DogRepository(Context context)
         {
-            this._context = context;
+            _context = context;
         }
+
         public Dog Add(Dog entity)
         {
             return _context.Dogs.Add(entity);

@@ -1,19 +1,21 @@
 ﻿@using Model.Utils
-@using UnitOfWorkNamespace.Models
-@model HomeViewModel
+@model UnitOfWorkNamespace.Models.HomeViewModel
 @{
     ViewBag.Title = "Home";
 }
 
 <div class="row">
     <ul id="users">
+
+
+
         @foreach (var user in Model.Users)
         {
             <li>
                 <div class="avatar" style="background-image: url(@user.Avatar)"></div>
                 <div class="user-info">
                     <span class="user-name">@user.FirstName @user.Name</span>
-                    <br />
+                    <br/>
                     <span id="user-age">Agé@(user.Sex == Sex.Female ? "e" : "") de @user.Age ans, @(user.Sex == Sex.Female ? "elle" : "il") possède @user.Dogs.Count chien@(user.Dogs.Count > 1 ? "s" : "")</span>
                 </div>
                 <ul class="dogs">
@@ -32,6 +34,15 @@
             </li>
         }
     </ul>
+
+    @* View Model *@
+
+    @*@using (Html.BeginForm())
+        {
+            @Html.LabelFor(x => x.Name)
+            @Html.EditorFor(x => x.Name)
+            @Html.ValidationMessageFor(x => x.Name)
+        }*@
 
 </div>
 

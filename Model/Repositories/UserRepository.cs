@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model.Entities;
 
 namespace Model.Repositories
@@ -13,7 +10,7 @@ namespace Model.Repositories
 
         private readonly Context _context;
         
-        public UserRepository(Context context)
+        internal UserRepository(Context context)
         {
             _context = context;
         }

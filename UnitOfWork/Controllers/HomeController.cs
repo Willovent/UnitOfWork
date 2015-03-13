@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Model;
+using Model.Entities;
 using UnitOfWorkNamespace.Models;
 
 namespace UnitOfWorkNamespace.Controllers
@@ -18,15 +19,24 @@ namespace UnitOfWorkNamespace.Controllers
 
         #region ViewModel
 
+        [HttpGet]
+        public ActionResult SignUp()
+        {
+            return View(new SignUpViewModel());
+        }
+
         [HttpPost]
-        public ActionResult Index(HomeViewModel homeViewModel)
+        public ActionResult SignUp(SignUpViewModel signUpViewModel)
         {
             if (ModelState.IsValid)
             {
-                homeViewModel.Name = "SUCCESS";
+                _unitOfWork.UserRepository.Add(signUpViewModel.getUserModel(new User()));
+                return RedirectToAction("Index");
             }
-            return View(homeViewModel);
+            return View(signUpViewModel);
         }
+
+
         #endregion
 
     }

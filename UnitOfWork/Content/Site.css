@@ -31,7 +31,13 @@
     border-radius: 12px;
     border: 1px solid gray;
 }
+.input-validation-error {
+    border: 1px solid #cd5c5c;
+}
 
+.field-validation-error {
+    color: #cd5c5c;
+}
 
 
 ul.dogs {

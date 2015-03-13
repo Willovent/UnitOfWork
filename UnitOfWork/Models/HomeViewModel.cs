@@ -15,25 +15,5 @@ namespace UnitOfWorkNamespace.Models
 
         public List<User> Users { get; set; }
 
-        #region ViewModel
-        
-        [Required]
-        [DisplayName("Nom")]
-        [MinLength(10,ErrorMessage = "Le champ {0} doit faire au minimun {1} caractères")]
-        public string Name { get; set; }
-
-
-        public HomeViewModel(User user)
-        {
-            this.Name = user.Name;
-        }
-
-        public User GetModel(User user)
-        {
-            user.Name = this.Name;
-            return user;
-        }
-
-        #endregion
     }
 }

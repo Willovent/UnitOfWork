@@ -31,9 +31,10 @@ namespace UnitOfWorkNamespace.Controllers
             if (ModelState.IsValid)
             {
                 _unitOfWork.UserRepository.Add(signUpViewModel.getUserModel(new User()));
+                _unitOfWork.Save();
                 return RedirectToAction("Index");
             }
-            return View(signUpViewModel);
+            return View();
         }
 
 

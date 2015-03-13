@@ -6,9 +6,6 @@
 
 <div class="row">
     <ul id="users">
-
-
-
         @foreach (var user in Model.Users)
         {
             <li>
@@ -34,16 +31,6 @@
             </li>
         }
     </ul>
-
-    @* View Model *@
-
-    @*@using (Html.BeginForm())
-        {
-            @Html.LabelFor(x => x.Name)
-            @Html.EditorFor(x => x.Name)
-            @Html.ValidationMessageFor(x => x.Name)
-        }*@
-
 </div>
 
 @section scripts{

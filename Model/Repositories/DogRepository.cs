@@ -28,6 +28,11 @@ namespace Model.Repositories
             _context.Dogs.Remove(entity);
         }
 
+        public Dog Find(int id)
+        {
+            return _context.Dogs.Find(id);
+        }
+
         public int Save()
         {
             return _context.SaveChanges();

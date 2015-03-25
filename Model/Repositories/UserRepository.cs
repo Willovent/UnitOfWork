@@ -40,6 +40,11 @@ namespace Model.Repositories
             _context.Users.Remove(entity);
         }
 
+        public User Find(int id)
+        {
+            return _context.Users.Find(id);
+        }
+
         public int Save()
         {
            return _context.SaveChanges();

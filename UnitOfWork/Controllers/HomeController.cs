@@ -17,6 +17,12 @@ namespace UnitOfWorkNamespace.Controllers
             return View(homeViewModel);
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _unitOfWork.Dispose();
+            base.Dispose(disposing);
+        }
+
         #region ViewModel
 
         [HttpGet]
